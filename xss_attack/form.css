@@ -1,0 +1,11 @@
+body {
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+h1 {
+    margin: 40vh 40vw 0;
+}
+
+form {
+    margin: 0 40vw;
+}

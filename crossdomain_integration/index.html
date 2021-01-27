@@ -1,0 +1,31 @@
+<! DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script>
+        function changeImg(){
+            document.getElementById('pic1').src =
+                'http://localhost:4200/otherimg2';
+        }
+        function getContent(){
+            xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://localhost:4200/content');
+            xhr.onload = xhr.onerror = function() {
+                if (this.status == 200) {
+                    console.log(this.response);
+                } else {
+                    console.log("error " + this.status);
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+<p><img src='https://images.unsplash.com/photo-1549226500-78fda9e6e14d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80' alt='CSP'></p>
+<p><img id='pic1' src='http://localhost:4200/img1' alt='photo'></p>
+<input type='button' value='change img'
+       onclick='changeImg()'><br>
+<input type='button' value='get content' onclick='getContent()'>
+</body>
+</html>
